@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "buddy": "buddy-react-app",
+    "default": "buddy-react-app"
+  }
+}

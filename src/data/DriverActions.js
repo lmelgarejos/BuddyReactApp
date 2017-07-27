@@ -6,9 +6,9 @@ import request from 'superagent';
 
 const Actions = {
   getDriver(params) {
-    // params.token = window.buddy.token;
-    window.buddy.token = params.token;
-    window.buddy.id = params.id;
+    params.token = window.buddy.token;
+    // window.buddy.token = params.token;
+    // window.buddy.id = params.id;
     request.get('http://localhost:3000/drivers/' + params.id).withCredentials()
       .end((err, res) => {
         // debugger;
@@ -25,6 +25,8 @@ const Actions = {
     // window.buddy.token = params.token;
     request.post('http://localhost:3000/drivers').withCredentials().send(params).set('Accept', 'application/json')
       .end((err, res) => {
+    // request.post('https://buddy--api.herokuapp.com/drivers').withCredentials().send(params).set('Accept', 'application/json')
+    //   .end((err, res) => {
         // debugger;
         if (err) return;
         AppDispatcher.dispatch({
