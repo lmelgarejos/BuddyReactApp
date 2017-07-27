@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GithubIcon from './GithubIcon';
+import Button from 'react-toolbox/lib/button/Button';
+
 // import hola from './hi.js';
 
 const authorizedUrl = 'https://github.com/login/oauth/authorize';
@@ -12,16 +15,24 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Buddy App</h2>
+          <h2 className="App-title">
+            Welcome to Buddy. A carpool app.
+          </h2>
         </div>
         <p className="App-intro">
-          <a
-            href={`${authorizedUrl}?client_id=${clientId}&scope=${scope}`}
-            >
-            Login with Github
-          </a>
+          An app to carpool with your awesome coworker.
         </p>
+        <div className="Login-buttons">
+          <Button
+            raised
+            accent
+            href={`${authorizedUrl}?client_id=${clientId}&scope=${scope}`}
+          >
+          <GithubIcon />
+            {' '}
+            Login with GitHub
+          </Button>
+        </div>
 
       </div>
     );

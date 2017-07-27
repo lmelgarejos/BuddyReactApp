@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
-// import theme from './toolbox/theme';
+import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+import theme from './toolbox/theme';
 import './index.css';
 import App from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
@@ -22,10 +22,11 @@ if (query.token) {
 
 
 ReactDOM.render(
-  // <div></div>,
-  // <ThemeProvider theme={theme}>
-  <App />,
-  // </ThemeProvider>,
+  <div>
+    <ThemeProvider theme={theme}>
+    <App />
+    </ThemeProvider>
+  </div>,
   document.getElementById('root')
 );
 registerServiceWorker();
